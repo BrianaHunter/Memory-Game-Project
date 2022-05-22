@@ -7,30 +7,24 @@ const resetTime = document.getElementById("ResetButton");
 const timeDisplay = document.getElementById("timeDisplay");
 let second = timeDisplay.innerText;
 let startIntervalId;
-let resetIntervalId;
 
 function updateTimer() {
   second = Number(second) - 1;
   timeDisplay.innerText = second;
-}
-function resetTimer() {
-  timeDisplay.innerText = 20;
-  second = 20;
-  countDownReset();
+  if (second === 0) {
+    clearInterval(startIntervalId);
+  }
 }
 
 function countDown() {
-  preventTimerEscalation();
+  clearInterval(startIntervalId);
   startIntervalId = setInterval(updateTimer, 1000);
 }
-function countDownReset() {
-  preventTimerEscalation();
-  resetIntervalId = setInterval(updateTimer, 1000);
-}
 
-function preventTimerEscalation() {
-  clearInterval(startIntervalId);
-  clearInterval(resetIntervalId);
+function resetTimer() {
+  timeDisplay.innerText = 20;
+  second = 20;
+  countDown();
 }
 
 startTime.addEventListener("click", countDown);
