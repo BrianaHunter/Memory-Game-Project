@@ -30,11 +30,10 @@ function resetTimer() {
 startTime.addEventListener("click", countDown);
 resetTime.addEventListener("click", resetTimer);
 
-// adding images and comparisons
+// trying to add images, an if statement,
 
 const cards = document.getElementsByClassName("flip-cards");
-
-startTime.addEventListener("click", () => {
+cards.style.startTime.addEventListener("click", () => {
   const cardElement = document.getElementById("image");
   cardElement.style.width = "100px";
   // cardElement.style.border = "3px solid white";

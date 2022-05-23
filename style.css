@@ -15,7 +15,12 @@ h3 {
   font-size: 12px;
 }
 
-.flip-cards {
+.flip-cards,
+.card {
+  cursor: pointer;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px black;
 }
 
 .buttons {
