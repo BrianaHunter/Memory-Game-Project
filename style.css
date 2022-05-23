@@ -18,9 +18,7 @@ h3 {
 .flip-cards,
 .card {
   cursor: pointer;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px black;
+  flex: 50%;
 }
 
 .buttons {
@@ -36,6 +34,17 @@ h3 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: aliceblue;
 }
+
+#pictures {
+    height: 100px;
+    width: 100px;
+}
+
+.card-container {
+    display: flexbox;
+    flex-wrap: wrap;
+}
+
 
 @media only screen and (min-width: 768px) {
 }
