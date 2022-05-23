@@ -13,6 +13,7 @@ function updateTimer() {
   timeDisplay.innerText = second;
   if (second === 0) {
     clearInterval(startIntervalId);
+    startTime.removeEventListener("click", countDown);
   }
 }
 
