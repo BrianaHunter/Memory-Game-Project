@@ -1,0 +1,32 @@
+body {
+  background-image: url("images/background.png");
+  background-size: 1160px;
+}
+
+h1 {
+  /* position: fixed; */
+  text-align: center;
+  font-size: 35px;
+}
+h3 {
+  font-size: 15px;
+}
+#ordered {
+  font-size: 12px;
+}
+.instructions {
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 280px;
+  position: relative;
+}
+
+#timeDisplay {
+  margin-left: 30px;
+  margin-top: -70px;
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: aliceblue;
+}
