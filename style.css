@@ -1,6 +1,7 @@
 body {
+  box-sizing: border-box;
   background-image: url("images/background.png");
-  background-size: 1160px;
+  /* background-size: 1160px; */
 }
 
 h1 {
@@ -82,4 +83,23 @@ h3 {
     margin-right: 150px;
     margin-bottom: 150px;
 }
+
+.buttons {
+    text-align: center;
+    margin-top: 260px;
+    position: relative;
+    margin-bottom: 0px;
+  }
+  
+  #StartButton {
+      border-radius: 30px;
+      width: 100px;
+      background-color: aquamarine;
+  }
+  
+  #ResetButton {
+      border-radius: 30px;
+      width: 100px;
+      background-color: aquamarine;
+  }
 }
