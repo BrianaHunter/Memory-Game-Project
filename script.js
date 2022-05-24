@@ -31,9 +31,30 @@ function resetTimer() {
 startTime.addEventListener("click", countDown);
 resetTime.addEventListener("click", resetTimer);
 
+//Working on SHUFFLE functions
+let shuffleArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
+let imgTag = document.querySelectorAll(".front-img");
+console.log(imgTag);
+console.log(imgTag[1].src);
+
+function shuffleCards(array, items) {
+  const clonedArray = [...array];
+  let randomArray = [];
+  for (let i = 0; i <= items; i++) {
+    let randomIndex = Math.floor(Math.random() * clonedArray.length);
+    randomArray.push(clonedArray[randomIndex]);
+    clonedArray.splice(randomIndex, 1);
+  }
+  for (let i = 0; i < randomArray.length - 1; i++) {
+    imgTag[i].src = `images/img-${randomArray[i]}.png`;
+  }
+}
+
+// shuffleCards(shuffleArray, 12);
+
 // trying to add images, an if statement,
 
-const cardFlipElement = document.querySelector(".card");
+const cardFlipElement = document.querySelectorAll(".card");
 
 function flipCard(event) {
   let clickedCard = event.target;
