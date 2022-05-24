@@ -49,13 +49,13 @@ h3 {
   color: aliceblue;
 }
 
-#pictures {
+.image {
   height: 100px;
   width: 100px;
 }
 
-.card-container {
-  display: flexbox;
+.flip-cards {
+  display: inline-block;
   flex-wrap: wrap;
 }
 
@@ -63,7 +63,7 @@ h3 {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.card-container:hover .flip-cards .card {
+.flip-cards:hover .card {
   transform: rotateY(180deg);
 }
 .flip {
@@ -84,7 +84,7 @@ h3 {
     /* float: right; */
   }
 
-  #pictures {
+  .image {
     height: 100px;
     width: 100px;
     /* float: right; */
