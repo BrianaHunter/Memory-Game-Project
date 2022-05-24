@@ -28,8 +28,14 @@ function resetTimer() {
   countDown();
 }
 
-startTime.addEventListener("click", countDown);
-resetTime.addEventListener("click", resetTimer);
+startTime.addEventListener("click", () => {
+  countDown();
+  shuffleCards(shuffleArray, 12);
+});
+resetTime.addEventListener("click", () => {
+  resetTimer();
+  shuffleCards(shuffleArray, 12);
+});
 
 //Working on SHUFFLE functions
 let shuffleArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
@@ -49,8 +55,6 @@ function shuffleCards(array, items) {
     imgTag[i].src = `images/img-${randomArray[i]}.png`;
   }
 }
-
-// shuffleCards(shuffleArray, 12);
 
 // trying to add images, an if statement,
 
