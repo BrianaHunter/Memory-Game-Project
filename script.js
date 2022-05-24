@@ -7,13 +7,14 @@ const resetTime = document.getElementById("ResetButton");
 const timeDisplay = document.getElementById("timeDisplay");
 let second = timeDisplay.innerText;
 let startIntervalId;
+let shuffleArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+let imgTag = document.querySelectorAll(".front-img");
 
 function updateTimer() {
   second = Number(second) - 1;
   timeDisplay.innerText = second;
   if (second === 0) {
     clearInterval(startIntervalId);
-    startTime.removeEventListener("click", countDown);
   }
 }
 
@@ -28,20 +29,22 @@ function resetTimer() {
   countDown();
 }
 
-startTime.addEventListener("click", () => {
-  countDown();
-  shuffleCards(shuffleArray, 12);
-});
+startTime.addEventListener(
+  "click",
+  () => {
+    countDown();
+    shuffleCards(shuffleArray, 12);
+  },
+  {
+    once: true,
+  }
+);
 resetTime.addEventListener("click", () => {
   resetTimer();
   shuffleCards(shuffleArray, 12);
 });
 
 //Working on SHUFFLE functions
-let shuffleArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
-let imgTag = document.querySelectorAll(".front-img");
-console.log(imgTag);
-console.log(imgTag[1].src);
 
 function shuffleCards(array, items) {
   const clonedArray = [...array];

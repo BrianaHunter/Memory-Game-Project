@@ -54,6 +54,11 @@ h3 {
   width: 100px;
 }
 
+img {
+  height: 100px;
+  width: 100px;
+}
+
 .flip-cards {
   display: inline-block;
   flex-wrap: wrap;
