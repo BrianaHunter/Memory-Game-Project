@@ -22,15 +22,28 @@ h3 {
 }
 
 .buttons {
-  text-align: center;
-  margin-top: 280px;
+  text-align: left;
+  margin-top: 260px;
   position: relative;
+  margin-bottom: 5px;
+}
+
+#StartButton {
+    border-radius: 30px;
+    width: 100px;
+    background-color: aquamarine;
+}
+
+#ResetButton {
+    border-radius: 30px;
+    width: 100px;
+    background-color: aquamarine;
 }
 
 #timeDisplay {
   margin-left: 30px;
   margin-top: -70px;
-  font-size: 50px;
+  font-size: 40px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: aliceblue;
 }
@@ -47,4 +60,25 @@ h3 {
 
 
 @media only screen and (min-width: 768px) {
+}
+
+.flip-cards,
+.card {
+  cursor: pointer;
+  flex: 50%;
+  /* float: right; */
+}
+
+#pictures {
+    height: 100px;
+    width: 100px;
+    /* float: right; */
+}
+
+.card-container {
+    display: flexbox;
+    flex-wrap: wrap;
+    float: right;
+    margin-right: 150px;
+    margin-bottom: 150px;
 }
