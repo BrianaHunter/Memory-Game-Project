@@ -33,13 +33,13 @@ resetTime.addEventListener("click", resetTimer);
 
 // trying to add images, an if statement,
 
-const cards = document.getElementsByClassName("flip-cards");
-cards.style.startTime.addEventListener("click", () => {
-  const cardElement = document.getElementById("image");
-  cardElement.style.width = "100px";
-  // cardElement.style.border = "3px solid white";
+const cardFlipElement = document.querySelector(".card");
 
-  if (cardElement === cardElement) {
-    cardElement.src = "images/crab.png";
-  }
+function flipCard(event) {
+  let clickedCard = event.target;
+  clickedCard.classList.add("flip");
+}
+
+cardFlipElement.forEach((card) => {
+  card.addEventListener("click", flipCard);
 });
