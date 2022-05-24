@@ -60,7 +60,7 @@ h3 {
 
 
 @media only screen and (min-width: 768px) {
-}
+
 
 .flip-cards,
 .card {
@@ -81,4 +81,5 @@ h3 {
     float: right;
     margin-right: 150px;
     margin-bottom: 150px;
+}
 }
