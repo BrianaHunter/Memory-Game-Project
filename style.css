@@ -19,12 +19,13 @@ h3 {
 .flip-cards,
 .card {
   cursor: pointer;
-  flex: 50%;
+  /* flex: 50%; */
+  margin: 5px;
 }
 
 .buttons {
   text-align: left;
-  margin-top: 260px;
+  margin-top: 30px;
   position: relative;
   margin-bottom: 5px;
 }
@@ -44,9 +45,20 @@ h3 {
 #timeDisplay {
   margin-left: 30px;
   margin-top: -70px;
+  margin-bottom: 10px;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: aliceblue;
+}
+
+#game-board {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cards {
+  /* width: 400px; */
 }
 
 .image {
@@ -54,7 +66,7 @@ h3 {
   width: 100px;
 }
 
-img {
+.front-img {
   height: 100px;
   width: 100px;
 }
@@ -85,7 +97,7 @@ img {
   .flip-cards,
   .card {
     cursor: pointer;
-    flex: 50%;
+    /* flex: 50%; */
     /* float: right; */
   }
 
@@ -105,7 +117,7 @@ img {
 
   .buttons {
     text-align: center;
-    margin-top: 260px;
+    margin-top: 30px;
     position: relative;
     margin-bottom: 0px;
   }
