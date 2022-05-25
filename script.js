@@ -61,7 +61,7 @@ function shuffleCards(array, items) {
 
 // trying to add images, an if statement,
 
-const cardFlipElement = document.querySelectorAll(".card");
+const cardFlipElement = document.querySelectorAll(".flip-cards");
 
 function flipCard(event) {
   let clickedCard = event.target;

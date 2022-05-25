@@ -80,7 +80,7 @@ h3 {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.flip-cards:hover .card {
+.flip-cards.flip .card {
   transform: rotateY(180deg);
 }
 .flip {
