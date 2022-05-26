@@ -55,7 +55,7 @@ function shuffleCards(array, items) {
     clonedArray.splice(randomIndex, 1);
   }
   for (let i = 0; i < randomArray.length - 1; i++) {
-    imgTag[i].src = `images/img-${randomArray[i]}.png`;
+    imgTag[i] = `images/img-${randomArray[i]}.png`;
   }
 }
 
@@ -75,12 +75,15 @@ function flipCard(event) {
     }
     card2 = clickedCard;
 
-    let card1Image = card1.querySelector("img").src,
-      card2Image = card2.querySelector("img").src;
+    let card1Image = card1.querySelector("img"),
+      card2Image = card2.querySelector("img");
     matchedCards(card1Image, card2Image);
   }
 }
 function matchedCards(image1, image2) {
+  console.log(image1);
+  console.log(image2);
+
   if (image1 === image2) {
     return console.log("Cards matched");
   }
