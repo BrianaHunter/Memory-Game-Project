@@ -9,6 +9,7 @@ let second = timeDisplay.innerText;
 let startIntervalId;
 let shuffleArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
 let imgTag = document.querySelectorAll(".fish-img");
+let matchCount = 0;
 
 function updateTimer() {
   second = Number(second) - 1;
@@ -34,6 +35,9 @@ startTime.addEventListener(
   () => {
     countDown();
     shuffleCards(shuffleArray, 12);
+    cardFlipped.forEach((card) => {
+      card.addEventListener("click", flipCard);
+    });
   },
   {
     once: true,
@@ -42,6 +46,11 @@ startTime.addEventListener(
 resetTime.addEventListener("click", () => {
   resetTimer();
   shuffleCards(shuffleArray, 12);
+  cardFlipped.forEach((card) => {
+    card.addEventListener("click", flipCard);
+    card.classList.remove("flip");
+    card.classList.remove("hidden");
+  });
 });
 
 //Working on SHUFFLE functions
@@ -65,6 +74,11 @@ const cardFlipped = document.querySelectorAll(".card");
 
 let card1, card2;
 
+function removePair() {
+  card1.classList.add("hidden");
+  card2.classList.add("hidden");
+}
+
 function flipCard(event) {
   console.log(event.target);
   let clickedCard = event.target;
@@ -74,20 +88,31 @@ function flipCard(event) {
       return (card1 = clickedCard);
     }
     card2 = clickedCard;
-
-    let card1Image = card1.querySelector("img"),
-      card2Image = card2.querySelector("img");
+    let card1Image = card1.querySelector(".back-side img").src,
+      card2Image = card2.querySelector(".back-side img").src;
     matchedCards(card1Image, card2Image);
   }
 }
 function matchedCards(image1, image2) {
   console.log(image1);
   console.log(image2);
-
+  console.log("card1", card1);
   if (image1 === image2) {
+    // setTimeout(removePair, 2000); //THIS DOESNT WORK LIKE I WANT IT TO. ASK JALEN OR MITCH
+    removePair();
+    card1 = "";
+    card2 = "";
+    matchCount++;
+    console.log(matchCount);
+    if (matchCount === 6) {
+      console.log("YOU WIN");
+    }
     return console.log("Cards matched");
+  } else {
+    card1 = "";
+    card2 = "";
+    return console.log("Cards not matched");
   }
-  return console.log("Cards not matched");
 }
 cardFlipped.forEach((card) => {
   card.addEventListener("click", flipCard);
