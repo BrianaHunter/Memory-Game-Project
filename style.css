@@ -1,7 +1,7 @@
 body {
   box-sizing: border-box;
-  background-image: url("images/background.png");
-  /* background-size: 1160px; */
+  background-image: url("images/background-image.jpg");
+  background-size: cover;
 }
 
 h1 {
