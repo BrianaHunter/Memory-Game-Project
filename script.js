@@ -61,13 +61,31 @@ function shuffleCards(array, items) {
 
 // trying to add images, an if statement,
 
-const cardFlipElement = document.querySelectorAll(".flip-cards");
+const cardFlipped = document.querySelectorAll(".card");
+
+let card1, card2;
 
 function flipCard(event) {
+  console.log(event.target);
   let clickedCard = event.target;
-  clickedCard.classList.add("flip");
-}
+  if (clickedCard !== card1) {
+    clickedCard.classList.add("flip");
+    if (!card1) {
+      return (card1 = clickedCard);
+    }
+    card2 = clickedCard;
 
-cardFlipElement.forEach((card) => {
+    let card1Image = card1.querySelector("img").src,
+      card2Image = card2.querySelector("img").src;
+    matchedCards(card1Image, card2Image);
+  }
+}
+function matchedCards(image1, image2) {
+  if (image1 === image2) {
+    return console.log("Cards matched");
+  }
+  return console.log("Cards not matched");
+}
+cardFlipped.forEach((card) => {
   card.addEventListener("click", flipCard);
 });

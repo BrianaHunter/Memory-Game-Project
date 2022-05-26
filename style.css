@@ -16,13 +16,6 @@ h3 {
   font-size: 12px;
 }
 
-.flip-cards,
-.card {
-  cursor: pointer;
-  /* flex: 50%; */
-  margin: 5px;
-}
-
 .buttons {
   text-align: left;
   margin-top: 30px;
@@ -50,69 +43,78 @@ h3 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: aliceblue;
 }
-
-#game-board {
-  width: 80vw;
+.container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  justify-content: center;
+}
+.instructions {
+  margin-left: 60px;
+}
+.cards,
+.card,
+.view {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards {
+  height: 400px;
+  width: 400px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-
-#cards {
-  /* width: 400px; */
-}
-
-.image {
-  height: 100px;
-  width: 100px;
-}
-
-.front-img {
-  height: 100px;
-  width: 100px;
-}
-
-.flip-cards {
-  display: inline-block;
-  flex-wrap: wrap;
-}
-
-.card {
-  transition: transform 0.8s;
+.cards .card {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
   transform-style: preserve-3d;
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
 }
-.flip-cards.flip .card {
+.card .view {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 7px;
+  background: #fff;
+  pointer-events: none;
+  backface-visibility: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s;
+}
+.card .front-side img {
+  width: 19px;
+}
+.card .back-side img {
+  max-width: 60px;
+}
+.card .back-side {
+  transform: rotateY(-180deg);
+}
+.card.flip .back-side {
+  transform: rotateY(0);
+}
+.card.flip .front-side {
   transform: rotateY(180deg);
 }
-.flip {
-}
-/* styling the backside of card */
-
-/* .flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-} */
 
 @media only screen and (min-width: 768px) {
-  .flip-cards,
-  .card {
-    cursor: pointer;
-    /* flex: 50%; */
-    /* float: right; */
+  .container {
+    display: inline;
+    /* grid-template-columns: 1fr 2fr; */
+    align-items: center;
+    /* justify-content: center; */
   }
-
-  .image {
-    height: 100px;
-    width: 100px;
-    /* float: right; */
+  .cards {
+    height: 350px;
+    width: 350px;
   }
-
-  .card-container {
-    display: flex;
-    flex-direction: column;
-    float: right;
-    margin-right: 300px;
-    margin-bottom: 150px;
+  .card .front-side img {
+    width: 17px;
+  }
+  .card .back-side img {
+    max-width: 50px;
   }
 
   .buttons {
@@ -132,5 +134,18 @@ h3 {
     border-radius: 30px;
     width: 100px;
     background-color: aquamarine;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .cards {
+    height: 300px;
+    width: 300px;
+  }
+  .card .front-side img {
+    width: 15px;
+  }
+  .card .back-side img {
+    max-width: 45px;
   }
 }
