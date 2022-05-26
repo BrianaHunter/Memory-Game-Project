@@ -16,12 +16,14 @@ function updateTimer() {
   timeDisplay.innerText = second;
   if (second === 0) {
     clearInterval(startIntervalId);
+    gameOver();
   }
+
 }
 
 function countDown() {
   clearInterval(startIntervalId);
-  startIntervalId = setInterval(updateTimer, 1000);
+  startIntervalId = setInterval(updateTimer, 200);
 }
 
 function resetTimer() {
@@ -117,3 +119,10 @@ function matchedCards(image1, image2) {
 cardFlipped.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
+
+function gameOver() {
+    clearInterval(startIntervalId);
+    // this.audioController.gameOver();
+    document.getElementById("underTheSea").classList.add("visible");
+
+}
