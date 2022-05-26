@@ -8,7 +8,7 @@ const timeDisplay = document.getElementById("timeDisplay");
 let second = timeDisplay.innerText;
 let startIntervalId;
 let shuffleArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
-let imgTag = document.querySelectorAll(".front-img");
+let imgTag = document.querySelectorAll(".fish-img");
 
 function updateTimer() {
   second = Number(second) - 1;
@@ -55,7 +55,7 @@ function shuffleCards(array, items) {
     clonedArray.splice(randomIndex, 1);
   }
   for (let i = 0; i < randomArray.length - 1; i++) {
-    imgTag[i] = `images/img-${randomArray[i]}.png`;
+    imgTag[i].src = `images/img-${randomArray[i]}.png`;
   }
 }
 
