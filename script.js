@@ -10,6 +10,8 @@ let startIntervalId;
 let shuffleArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
 let imgTag = document.querySelectorAll(".fish-img");
 let matchCount = 0;
+const underTheSea = document.getElementById("underTheSea");
+const victoryText = document.getElementById("victory-text");
 
 function updateTimer() {
   second = Number(second) - 1;
@@ -22,7 +24,7 @@ function updateTimer() {
 
 function countDown() {
   clearInterval(startIntervalId);
-  startIntervalId = setInterval(updateTimer, 200);
+  startIntervalId = setInterval(updateTimer, 1200);
 }
 
 function resetTimer() {
@@ -47,6 +49,9 @@ startTime.addEventListener(
 resetTime.addEventListener("click", () => {
   resetTimer();
   shuffleCards(shuffleArray, 12);
+  matchCount = 0;
+  underTheSea.classList.remove("visible");
+  victoryText.classList.remove("visible");
   cardFlipped.forEach((card) => {
     card.addEventListener("click", flipCard);
     card.classList.remove("flip");
@@ -99,28 +104,47 @@ function matchedCards(image1, image2) {
   console.log(image2);
   console.log("card1", card1);
   if (image1 === image2) {
-    // setTimeout(removePair, 2000); //THIS DOESNT WORK LIKE I WANT IT TO. ASK JALEN OR MITCH
-    removePair();
+    const cardA = card1;
+    const cardB = card2;
+
+    setTimeout(() => {
+      cardA.classList.remove("flip");
+      cardB.classList.remove("flip");
+      cardA.classList.add("hidden");
+      cardB.classList.add("hidden");
+    }, 1000);
     card1 = "";
     card2 = "";
     matchCount++;
     console.log(matchCount);
     if (matchCount === 6) {
-      console.log("YOU WIN");
+      winGame();
     }
     return console.log("Cards matched");
   } else {
+    const cardA = card1;
+    const cardB = card2;
+
+    setTimeout(() => {
+      cardA.classList.remove("flip");
+      cardB.classList.remove("flip");
+    }, 1000);
     card1 = "";
     card2 = "";
     return console.log("Cards not matched");
   }
 }
-cardFlipped.forEach((card) => {
-  card.addEventListener("click", flipCard);
-});
+// cardFlipped.forEach((card) => {
+//   card.addEventListener("click", flipCard);
+// });
 
 function gameOver() {
   clearInterval(startIntervalId);
   // this.audioController.gameOver();
   document.getElementById("underTheSea").classList.add("visible");
+}
+
+function winGame() {
+  clearInterval(startIntervalId);
+  victoryText.classList.add("visible");
 }

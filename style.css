@@ -130,18 +130,17 @@ h3 {
   visibility: hidden;
 }
 
-.visible {
-  /* display: block; */
-}
-
 .overlay-text {
   display: flex;
   flex-direction: column;
   color: black;
   animation: overlay-grow 500ms forwards;
-  /* display: block; */
+  display: none;
 }
 
+.visible {
+  display: block;
+}
 @media only screen and (min-width: 768px) {
   .container {
     /* display: inline; */
