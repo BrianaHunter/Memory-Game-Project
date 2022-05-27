@@ -9,18 +9,15 @@
   </head>
   <body>
     <div id="background-image"></div>
-    <div id="underTheSea" class="overlay-text">
-        Under the sea, try again!!
-    </div>
-    <div id="victory-text" class="overlay-text">
-        You did it!!
-    </div>
+    <!-- <div id="underTheSea" class="overlay-text">Under the sea, try again!!</div>
+    <div id="victory-text" class="overlay-text">You did it!!</div> -->
 
     <h1>Card Sharks</h1>
+
     <div class="container">
       <div class="instructions">
-        <h3>Instructions</h3>
-        <ol id="ordered">
+        <h3>How To Play</h3>
+        <ul id="ordered">
           <li id="list">Choose two cards that you want to compare</li>
           <li id="list">
             If the two cards are a match, it will result in a match
@@ -34,7 +31,15 @@
           </li>
           <li id="list">You have 20 seconds to complete</li>
           <li id="list">The time will begin once you click start</li>
-        </ol>
+        </ul>
+
+        <div class="container-2">
+          <div class="buttons">
+            <button id="StartButton">Start</button>
+            <button id="ResetButton">Reset</button>
+          </div>
+          <div id="timeDisplay">:20</div>
+        </div>
       </div>
 
       <div class="game-board">
@@ -149,11 +154,6 @@
         </div>
       </div>
     </div>
-    <div class="buttons">
-      <button id="StartButton">Start</button>
-      <button id="ResetButton">Reset</button>
-    </div>
-    <div id="timeDisplay">20</div>
 
     <script src="script.js"></script>
   </body>

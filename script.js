@@ -18,7 +18,6 @@ function updateTimer() {
     clearInterval(startIntervalId);
     gameOver();
   }
-
 }
 
 function countDown() {
@@ -121,8 +120,7 @@ cardFlipped.forEach((card) => {
 });
 
 function gameOver() {
-    clearInterval(startIntervalId);
-    // this.audioController.gameOver();
-    document.getElementById("underTheSea").classList.add("visible");
-
+  clearInterval(startIntervalId);
+  // this.audioController.gameOver();
+  document.getElementById("underTheSea").classList.add("visible");
 }
