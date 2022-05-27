@@ -141,10 +141,10 @@ function matchedCards(image1, image2) {
 function gameOver() {
   clearInterval(startIntervalId);
   // this.audioController.gameOver();
-  document.getElementById("underTheSea").classList.add("visible");
+  document.getElementById("underTheSea").classList.remove("hidden");
 }
 
 function winGame() {
   clearInterval(startIntervalId);
-  victoryText.classList.add("visible");
+  victoryText.classList.remove("hidden");
 }
