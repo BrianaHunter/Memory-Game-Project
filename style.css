@@ -13,7 +13,9 @@ h1 {
   text-align: center;
   color: white;
   text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
-  font-size: 65px;
+  font-size: 95px;
+  margin-top: auto;
+  margin-bottom: -2.5px;
 }
 h3 {
   color: white;
@@ -28,12 +30,12 @@ h3 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 #StartButton {
   border-radius: 30px;
   width: 100px;
   background-color: aquamarine;
   padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 #ResetButton {
@@ -41,36 +43,43 @@ h3 {
   width: 100px;
   background-color: aquamarine;
   padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 #timeDisplay {
   font-size: 80px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: aliceblue;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  font-size: 65px;
+  margin: 20px 0px 0px 360px;
 }
-.container {
+.bigContainer {
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
-  padding: 80px;
-  /* padding-right: 300px;
-  padding-left: 300px; */
+  /* border: 3px solid white; */
+  padding: 0px 100px 0px 100px;
 }
 .container-2 {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  /* border: 3px solid red; */
 }
 .instructions {
-  /* float: left; */
-  padding: 10px;
-  /* border: 3px solid white; */
+  width: 100%;
+  margin-left: 40px;
 }
-.game-board {
-  /* margin-right: 150px; */
-  /* float: right; */
-  /* border: 3px solid white; */
-  padding: 20px;
+.buttons {
+  margin-top: 70px;
+}
+.container-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* border: 3px solid purple; */
+  /* margin-top: 10px; */
 }
 .cards,
 .card,
@@ -80,8 +89,8 @@ h3 {
   justify-content: center;
 }
 .cards {
-  height: 500px;
-  width: 500px;
+  height: 550px;
+  width: 550px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -101,14 +110,14 @@ h3 {
   background: #fff;
   pointer-events: none;
   backface-visibility: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.25s;
 }
 .card .front-side img {
-  width: 60px;
+  width: 100px;
 }
 .card .back-side img {
-  max-width: 60px;
+  max-width: 100px;
 }
 .card .back-side {
   transform: rotateY(-180deg);
@@ -128,55 +137,66 @@ h3 {
   display: flex;
   flex-direction: column;
   color: black;
-  /* font-size: 100px; */
   animation: overlay-grow 500ms forwards;
-  /* display: none; */
 }
 
-
-
-@media only screen and (min-width: 768px) {
-  .container {
-    /* display: inline; */
-    /* grid-template-columns: 1fr 2fr; */
-    align-items: center;
-    /* justify-content: center; */
+@media only screen and (max-width: 768px) {
+  .container-2 {
+    /* display: flex;
+    flex-direction: column;
+    width: 100%; */
+    border: 3px solid red;
   }
+  .instructions {
+    /* width: 100%; */
+    /* margin-left: 40px; */
+  }
+  .buttons {
+    /* margin-top: 70px; */
+  }
+  .container-3 {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* width: 100%; */
+    border: 3px solid purple;
+    /* margin-top: 10px; */
+  }
+  .bigContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px solid white;
+  }
+  .buttons {
+  }
+
+  #StartButton {
+    /* border-radius: 30px;
+    width: 100px;
+    background-color: aquamarine; */
+  }
+
+  #ResetButton {
+    /* border-radius: 30px;
+    width: 100px;
+    background-color: aquamarine; */
+  }
+
   .cards {
-    height: 350px;
-    width: 350px;
+    height: 550px;
+    width: 550px;
   }
   .card .front-side img {
-    width: 60px;
+    width: 80px;
   }
   .card .back-side img {
     max-width: 50px;
   }
-
-  .buttons {
-    text-align: center;
-    margin-top: 30px;
-    position: relative;
-    margin-bottom: 0px;
-  }
-
-  #StartButton {
-    border-radius: 30px;
-    width: 100px;
-    background-color: aquamarine;
-  }
-
-  #ResetButton {
-    border-radius: 30px;
-    width: 100px;
-    background-color: aquamarine;
-  }
-  .game-board {
-    margin-left: 100px;
-  }
 }
 
-@media screen and (max-width: 530px) {
+/* @media screen and (max-width: 530px) {
   .cards {
     height: 400px;
     width: 400px;
@@ -187,7 +207,4 @@ h3 {
   .card .back-side img {
     max-width: 45px;
   }
-  /* .game-board {
-    margin-left: 100px;
-  } */
-}
+} */
