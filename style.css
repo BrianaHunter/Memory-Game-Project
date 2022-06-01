@@ -139,49 +139,57 @@ h3 {
   color: black;
   animation: overlay-grow 500ms forwards;
 }
+.dropdown {
+  /* visibility: hidden; */
+}
 
 @media only screen and (max-width: 768px) {
+  .dropdown {
+    width: 120px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown p {
+    font-family: "Mabook";
+    color: black;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
   .container-2 {
-    /* display: flex;
-    flex-direction: column;
-    width: 100%; */
     border: 3px solid red;
+    display: inline-flex;
   }
   .instructions {
-    /* width: 100%; */
-    /* margin-left: 40px; */
+    margin-left: 40px;
   }
   .buttons {
-    /* margin-top: 70px; */
+    margin-top: 0px;
   }
+
   .container-3 {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* width: 100%; */
     border: 3px solid purple;
-    /* margin-top: 10px; */
   }
+
   .bigContainer {
-    width: 100%;
+    width: 75%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     border: 3px solid white;
-  }
-  .buttons {
-  }
-
-  #StartButton {
-    /* border-radius: 30px;
-    width: 100px;
-    background-color: aquamarine; */
-  }
-
-  #ResetButton {
-    /* border-radius: 30px;
-    width: 100px;
-    background-color: aquamarine; */
   }
 
   .cards {
@@ -189,14 +197,14 @@ h3 {
     width: 550px;
   }
   .card .front-side img {
-    width: 80px;
+    width: 90px;
   }
   .card .back-side img {
-    max-width: 50px;
+    max-width: 90px;
   }
 }
 
-/* @media screen and (max-width: 530px) {
+@media screen and (max-width: 530px) {
   .cards {
     height: 400px;
     width: 400px;
@@ -207,4 +215,4 @@ h3 {
   .card .back-side img {
     max-width: 45px;
   }
-} */
+}
