@@ -52,7 +52,7 @@ h3 {
   color: aliceblue;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   font-size: 65px;
-  margin: 20px 0px 0px 360px;
+  /* margin: 20px 0px 0px 360px; */
 }
 .bigContainer {
   display: flex;
@@ -174,7 +174,7 @@ h3 {
     display: inline-flex;
   }
   .instructions {
-    margin-left: 40px;
+    margin-left: 0px;
   }
   .buttons {
     margin-top: 0px;
