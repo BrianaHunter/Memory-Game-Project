@@ -45,15 +45,6 @@ h3 {
   padding: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
-
-#timeDisplay {
-  font-size: 80px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: aliceblue;
-  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  font-size: 65px;
-  /* margin: 20px 0px 0px 360px; */
-}
 .bigContainer {
   display: flex;
   justify-content: space-around;
@@ -70,8 +61,33 @@ h3 {
   width: 100%;
   margin-left: 40px;
 }
-.buttons {
+/* .buttons {
   margin-top: 70px;
+} */
+.timerAndButts {
+  position: absolute;
+  /* justify-content: space-between; */
+}
+.timer,
+.button-1,
+.button-2 {
+  position: relative;
+}
+#StartButton {
+  left: 0px;
+  top: 60px;
+}
+#ResetButton {
+  left: 350px;
+  top: 60px;
+}
+#timeDisplay {
+  font-size: 80px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: aliceblue;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  font-size: 65px;
+  left: 250px;
 }
 .container-3 {
   display: flex;
@@ -145,16 +161,10 @@ h3 {
 
 @media only screen and (max-width: 768px) {
   .dropdown {
-    width: 120px;
-    height: 30px;
-    background-color: yellow;
-    border-radius: 20px;
     position: relative;
-    display: inline-block;
-  }
-  .dropdown p {
-    font-family: "Mabook";
-    color: black;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
   }
   .dropdown-content {
     display: none;
@@ -165,12 +175,19 @@ h3 {
     padding: 12px 16px;
     z-index: 1;
   }
-
+  .dropdown-text {
+    padding: 5px 20px;
+    background-color: yellow;
+    border-radius: 20px;
+    font-family: "Mabook";
+    color: black;
+    margin: 0px auto;
+  }
   .dropdown:hover .dropdown-content {
     display: block;
   }
   .container-2 {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     display: inline-flex;
   }
   .instructions {
@@ -181,7 +198,7 @@ h3 {
   }
 
   .container-3 {
-    border: 3px solid purple;
+    /* border: 3px solid purple; */
   }
 
   .bigContainer {
@@ -189,7 +206,7 @@ h3 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: 3px solid white;
+    /* border: 3px solid white; */
   }
 
   .cards {
