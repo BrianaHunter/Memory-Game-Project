@@ -3,7 +3,7 @@
 //I got it started for reference. :-)
 
 const startTime = document.getElementById("StartButton");
-const resetTime = document.getElementById("ResetButton");
+const restart = document.querySelectorAll(".ResetButton");
 const timeDisplay = document.getElementById("timeDisplay");
 let second = timeDisplay.innerText;
 let startIntervalId;
@@ -13,12 +13,10 @@ let matchCount = 0;
 const underTheSea = document.getElementById("underTheSea");
 const victoryText = document.getElementById("victory-text");
 
-
 function playBubbles() {
-  var audio = new Audio('mp3/Bubbles.mp3');
+  var audio = new Audio("mp3/Bubbles.mp3");
   audio.loop = true;
   audio.play();
-
 }
 
 function updateTimer() {
@@ -55,16 +53,21 @@ startTime.addEventListener(
     once: true,
   }
 );
-resetTime.addEventListener("click", () => {
-  resetTimer();
-  shuffleCards(shuffleArray, 12);
-  matchCount = 0;
-  underTheSea.classList.remove("visible");
-  victoryText.classList.remove("visible");
-  cardFlipped.forEach((card) => {
-    card.addEventListener("click", flipCard);
-    card.classList.remove("flip");
-    card.classList.remove("hidden");
+
+restart.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    resetTimer();
+    shuffleCards(shuffleArray, 12);
+    matchCount = 0;
+    underTheSea.classList.remove("visible");
+    victoryText.classList.remove("visible");
+    cardFlipped.forEach((card) => {
+      card.addEventListener("click", flipCard);
+      card.classList.remove("flip");
+      card.classList.remove("hidden");
+    });
+    underTheSea.classList.add("no-display");
+    victoryText.classList.add("no-display");
   });
 });
 
@@ -150,10 +153,10 @@ function matchedCards(image1, image2) {
 function gameOver() {
   clearInterval(startIntervalId);
   // this.audioController.gameOver();
-  document.getElementById("underTheSea").classList.remove("hidden");
+  underTheSea.classList.remove("no-display");
 }
 
 function winGame() {
   clearInterval(startIntervalId);
-  victoryText.classList.remove("hidden");
+  victoryText.classList.remove("no-display");
 }

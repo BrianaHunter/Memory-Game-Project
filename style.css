@@ -51,7 +51,8 @@ h3 {
 }
 
 #StartButton,
-#ResetButton {
+#ResetButton,
+.ResetButton {
   border-radius: 30px;
   width: 120px;
   background-color: #cdcb00;
@@ -137,10 +138,28 @@ h3 {
 }
 
 .overlay-text {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   color: black;
-  animation: overlay-grow 500ms forwards;
+  animation: overlay-grow 500ms forwards; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vw;
+  font-size: 3em;
+  font-family: Mabook;
+  color: #006797;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 2px 2px 200px black;
+  padding: 60px;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.no-display {
+  display: none;
 }
 
 .dropdown-text {
