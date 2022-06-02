@@ -115,6 +115,7 @@ function matchedCards(image1, image2) {
   console.log(image1);
   console.log(image2);
   console.log("card1", card1);
+  disableCardFlip();
   if (image1 === image2) {
     const cardA = card1;
     const cardB = card2;
@@ -124,7 +125,8 @@ function matchedCards(image1, image2) {
       cardB.classList.remove("flip");
       cardA.classList.add("hidden");
       cardB.classList.add("hidden");
-    }, 1000);
+      enableCardFlip();
+    }, 500);
     card1 = "";
     card2 = "";
     matchCount++;
@@ -140,7 +142,8 @@ function matchedCards(image1, image2) {
     setTimeout(() => {
       cardA.classList.remove("flip");
       cardB.classList.remove("flip");
-    }, 1000);
+      enableCardFlip();
+    }, 500);
     card1 = "";
     card2 = "";
     return console.log("Cards not matched");
@@ -153,10 +156,23 @@ function matchedCards(image1, image2) {
 function gameOver() {
   clearInterval(startIntervalId);
   // this.audioController.gameOver();
+  disableCardFlip();
   underTheSea.classList.remove("no-display");
 }
 
 function winGame() {
   clearInterval(startIntervalId);
   victoryText.classList.remove("no-display");
+}
+
+function enableCardFlip() {
+  cardFlipped.forEach((card) => {
+    card.addEventListener("click", flipCard);
+  });
+}
+
+function disableCardFlip() {
+  cardFlipped.forEach((card) => {
+    card.removeEventListener("click", flipCard);
+  });
 }
