@@ -2,7 +2,9 @@ body {
   box-sizing: border-box;
   background-image: url("images/background-image.jpg");
   background-size: cover;
+  /* background-repeat: no-repeat; */
 }
+
 @font-face {
   font-family: Mabook;
   src: url("Mabook.ttf");
@@ -11,18 +13,20 @@ body {
 h1 {
   font-family: Mabook;
   text-align: center;
-  color: white;
+  color: #cdcb00;
   text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
   font-size: 95px;
   margin-top: auto;
   margin-bottom: -2.5px;
 }
+
 h3 {
-  color: white;
+  color: #cdcb00;
   font-family: Mabook;
   font-size: 25px;
   text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3);
 }
+
 #ordered {
   color: white;
   font-size: 13px;
@@ -30,58 +34,48 @@ h3 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#StartButton {
-  border-radius: 30px;
-  width: 100px;
-  background-color: aquamarine;
-  padding: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-#ResetButton {
-  border-radius: 30px;
-  width: 100px;
-  background-color: aquamarine;
-  padding: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
 .bigContainer {
   display: flex;
   justify-content: space-around;
-  border: 3px solid white;
-  padding: 0px 100px 0px 100px;
+  /* border: 3px solid white; */
 }
+
 .container-2 {
-  display: flex;
   flex-direction: column;
   padding-right: 80px;
-  width: 100%;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
+
 .instructions {
-  width: 100%;
   margin-left: 40px;
 }
-/* .buttons {
-  margin-top: 70px;
-} */
+
+#StartButton,
+#ResetButton {
+  border-radius: 30px;
+  width: 120px;
+  background-color: #cdcb00;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  font-family: Mabook;
+  font-size: 20px;
+}
 
 #timeDisplay {
   font-size: 80px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: aliceblue;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  font-size: 65px;
-  left: 250px;
 }
+
 .container-3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  border: 3px solid purple;
-  /* margin-top: 10px; */
+  /* border: 3px solid purple; */
 }
+
 .cards,
 .card,
 .view {
@@ -89,12 +83,14 @@ h3 {
   align-items: center;
   justify-content: center;
 }
+
 .cards {
   height: 550px;
   width: 550px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .cards .card {
   cursor: pointer;
   position: relative;
@@ -103,6 +99,7 @@ h3 {
   height: calc(100% / 4 - 10px);
   width: calc(100% / 4 - 10px);
 }
+
 .card .view {
   width: 100%;
   height: 100%;
@@ -111,21 +108,26 @@ h3 {
   background: #fff;
   pointer-events: none;
   backface-visibility: hidden;
-  box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.25s;
 }
+
 .card .front-side img {
   width: 100px;
 }
+
 .card .back-side img {
   max-width: 100px;
 }
+
 .card .back-side {
   transform: rotateY(-180deg);
 }
+
 .card.flip .back-side {
   transform: rotateY(0);
 }
+
 .card.flip .front-side {
   transform: rotateY(180deg);
 }
@@ -140,11 +142,23 @@ h3 {
   color: black;
   animation: overlay-grow 500ms forwards;
 }
-.dropdown {
-  /* visibility: hidden; */
+
+.dropdown-text {
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .dropdown-text {
+    display: block;
+  }
+
   .dropdown {
     position: relative;
     display: flex;
@@ -155,24 +169,31 @@ h3 {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: black;
-    min-width: 260px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 12px 12px;
+    left: 190px;
+    top: 70px;
+    background-color: #054477;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    padding: 12px 10px;
     z-index: 1;
   }
 
   .dropdown-text {
-    padding: 5px 20px;
-    background-color: yellow;
-    border-radius: 20px;
+    padding: 15px 20px;
+    background-color: #579377;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
     font-family: "Mabook";
-    color: black;
+    color: #fff;
     margin: 0px auto;
   }
 
   .dropdown-text:hover ~ .dropdown-content {
     display: block;
+    cursor: pointer;
   }
 
   .timerAndButts {
@@ -186,24 +207,38 @@ h3 {
   }
 
   #StartButton {
-    left: 0px;
-    top: 60px;
+    left: 100px;
+    top: 50px;
   }
 
   #ResetButton {
-    left: 350px;
-    top: 60px;
+    left: 400px;
+    top: 50px;
   }
 
   #timeDisplay {
-    left: 250px;
+    left: 335px;
+    bottom: 25px;
+  }
+
+  .bigContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 3px solid white; */
+    padding: 0px 0px;
   }
 
   .container-2 {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     display: inline-flex;
     padding-right: 0px;
   }
+
+  /* .container-3 {
+    border: 3px solid purple;
+  } */
 
   .instructions {
     margin-left: 0px;
@@ -213,26 +248,48 @@ h3 {
     margin-top: 0px;
   }
 
-  .container-3 {
-    border: 3px solid purple;
-  }
-
-  .bigContainer {
-    width: 75%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border: 3px solid white;
-  }
-
   .cards {
     height: 550px;
     width: 550px;
   }
+
   .card .front-side img {
     width: 90px;
   }
+
   .card .back-side img {
     max-width: 90px;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+  .dropdown-content {
+    left: 90px;
+    top: 70px;
+  }
+
+  #StartButton {
+    left: 65px;
+  }
+
+  #ResetButton {
+    left: 240px;
+  }
+
+  #timeDisplay {
+    left: 233px;
+  }
+
+  .cards {
+    height: 400px;
+    width: 400px;
+  }
+
+  .card .front-side img {
+    width: 60px;
+  }
+
+  .card .back-side img {
+    max-width: 60px;
   }
 }
