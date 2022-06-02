@@ -146,14 +146,14 @@ h3 {
   top: 50%;
   left: 50%;
   width: 50%;
-  font-size: 3em;
+  font-size: 2em;
   font-family: Mabook;
   color: #006797;
   text-align: center;
   transform: translate(-50%, -50%);
   background-color: white;
   box-shadow: 2px 2px 200px black;
-  padding: 60px;
+  padding: 50px;
   z-index: 10;
   border-radius: 10px;
 }
