@@ -12,6 +12,11 @@ let imgTag = document.querySelectorAll(".fish-img");
 let matchCount = 0;
 const underTheSea = document.getElementById("underTheSea");
 const victoryText = document.getElementById("victory-text");
+var audio;
+
+function preload() {
+  audio = loadSound ("C:\Users\mizen\Downloads\Bubbles In Water   Sound Effect 35 (128 kbps).mp3")
+}
 
 function updateTimer() {
   second = Number(second) - 1;
@@ -37,6 +42,7 @@ startTime.addEventListener(
   "click",
   () => {
     countDown();
+    audio.play();
     shuffleCards(shuffleArray, 12);
     cardFlipped.forEach((card) => {
       card.addEventListener("click", flipCard);
